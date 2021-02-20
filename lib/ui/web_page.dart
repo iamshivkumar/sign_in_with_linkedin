@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:linkedin_auth/core/future/token_reader.dart';
-import 'package:linkedin_auth/core/service/auth_view_model..dart';
+import 'package:linkedin_auth/core/service/auth_service.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

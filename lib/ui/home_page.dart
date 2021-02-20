@@ -42,7 +42,7 @@ class HomePage extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "ID:"+user.id,
+                    "ID:" + user.id,
                     style: Theme.of(context).textTheme.caption,
                   ),
                 ),

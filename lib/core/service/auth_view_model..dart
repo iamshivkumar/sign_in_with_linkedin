@@ -1,10 +1,9 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthViewModel extends ChangeNotifier {
-
+class AuthService  {
+  /// I have created sample company and app on linkedin to get [_clientId], [_clientSecret]
   final String _clientId = "86wpvkt6w9p2vc";
   final String redirectUrI =
       "https://sites.google.com/view/linkedinloginsuccess/home";

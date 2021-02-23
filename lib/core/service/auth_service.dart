@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthService  {
+class AuthService {
   /// I have created sample company and app on linkedin to get [_clientId], [_clientSecret]
   final String _clientId = "86wpvkt6w9p2vc";
   final String redirectUrI =
@@ -27,5 +27,11 @@ class AuthService  {
       SharedPreferences.getInstance()
           .then((value) => value.setString("token", token));
     }
+  }
+
+  Future<void> logout() async {
+   await SharedPreferences.getInstance().then(
+      (value) => value.remove("token"),
+    );
   }
 }

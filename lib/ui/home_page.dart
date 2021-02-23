@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:linkedin_auth/core/future/token_reader.dart';
 import 'package:linkedin_auth/core/future/user_data_provider.dart';
+import 'package:linkedin_auth/core/service/auth_service.dart';
 
 class HomePage extends ConsumerWidget {
   @override
@@ -44,6 +46,18 @@ class HomePage extends ConsumerWidget {
                   child: Text(
                     "ID:" + user.id,
                     style: Theme.of(context).textTheme.caption,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MaterialButton(
+                    colorBrightness: Brightness.dark,
+                    color: Theme.of(context).primaryColor,
+                    onPressed: () async {
+                      await AuthService().logout();
+                      context.refresh(tokenReader);
+                    },
+                    child: Text("Sign Out"),
                   ),
                 ),
               ],
